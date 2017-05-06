@@ -20,7 +20,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    @*I removed one of the links that wasn't being used. To return "Home" the user can just click the Park Remarks icon*@
+                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("Reviews", "Index", "Reviews")</li>
                     <li>@Html.ActionLink("Category", "Index", "Categories")</li>
                 </ul>
@@ -31,7 +32,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Park Remarks Inc.</p>
         </footer>
     </div>
 

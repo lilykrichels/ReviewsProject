@@ -4,60 +4,87 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Explore Reviews</h2>
+<h3>Click on a Review to Read More</h3>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PublishDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Location)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th></th>
-    </tr>
+  @*Here I changed the reviews page from a list to thumbnails to make it more visually appealing *@   
+<div class="row">
+    @foreach (var item in Model)
+    {
+        //here we are editing a thumbnail to make it work for our patron 
+        //the data has been put in the differt <p> and <h> and we have edited the button so it links to details
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                @*<img src="..." alt="...">*@
+                <div class="caption text-center">
+                    @*//this centers the text and button*@
+                    <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                    <p>@Html.DisplayFor(modelItem => item.Location)</p>
+                    <p>@Html.ActionLink("Read More", "Details", new { id = item.ID }, new { role = "button", @class = "btn btn-primary" })</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+    
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
 
-</table>
+
+
+
+    @*commented out in order to add thumbnails*@
+        @*<table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PublishDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Location)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Content)
+                    </th>
+                    <th></th>
+                </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublishDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Content)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+                    </td>
+                </tr>
+            }
+
+            </table>*@
