@@ -12,22 +12,24 @@
 </p>
   @*Here I changed the reviews page from a list to thumbnails to make it more visually appealing *@   
 <div class="row">
-    @foreach (var item in Model)
-    {
-        //here we are editing a thumbnail to make it work for our patron 
-        //the data has been put in the differt <p> and <h> and we have edited the button so it links to details
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                @*<img src="..." alt="...">*@
-                <div class="caption text-center">
-                    @*//this centers the text and button*@
-                    <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
-                    <p>@Html.DisplayFor(modelItem => item.Location)</p>
-                    <p>@Html.ActionLink("Read More", "Details", new { id = item.ID }, new { role = "button", @class = "btn btn-primary" })</p>
+    <div class="container-fluid reviewsHome">
+        @foreach (var item in Model)
+        {
+            //here we are editing a thumbnail to make it work for our patron
+            //the data has been put in the differt <p> and <h> and we have edited the button so it links to details
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    @*<img src="..." alt="...">*@
+                    <div class="caption text-center">
+                        @*//this centers the text and button*@
+                        <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                        <p>@Html.DisplayFor(modelItem => item.Location)</p>
+                        <p>@Html.ActionLink("Read More", "Details", new { id = item.ID }, new { role = "button", @class = "btn btn-primary" })</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
     
 

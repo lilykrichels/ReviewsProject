@@ -16,9 +16,53 @@
     white-space: normal;
 }
 
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+body{
+    font-family:'ariel';
+}
+
+.mainPic{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Duck_pond_University_Parks_Oxford.jpg/800px-Duck_pond_University_Parks_Oxford.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%; 
+    color:lightgrey;
+    text-align:right;
+    outline-color:black;
+}
+
+.row{
+    background-color:darkseagreen;
+}
+   
+.thumbnail{
+    background-color:dimgray;
+   
+} 
+
+/*this costomizes the button color*/
+.btn{
+    background-color:darkgrey;
+}
+/*this customizes thead Navigation Bar*/
+.navBar{
+    background-color:darkolivegreen;
+    outline-color:darkslategrey;
+}
+
+/*this datalist customizing the home page for reviews*/
+.reviewsHome{
+    margin-top:20px;
+}
+
+/*this customizing the individual reviews*/
+.detailsCard{
+   background-color:gray;
+   font-size: large;
 }
