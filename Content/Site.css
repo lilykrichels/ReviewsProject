@@ -28,6 +28,7 @@ body{
     font-family:'ariel';
 }
 
+/*this is the jumbotron customization. I made it a background image so that the text could overlay over it*/ 
 .mainPic{
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Duck_pond_University_Parks_Oxford.jpg/800px-Duck_pond_University_Parks_Oxford.jpg);
     background-repeat: no-repeat;
@@ -36,11 +37,11 @@ body{
     text-align:right;
     outline-color:black;
 }
-
+ /*customizes the back ground color of the thumbnails on the front page*/
 .row{
     background-color:darkseagreen;
 }
-   
+   /*customizes the color of the thumnails on the reviews page*/
 .thumbnail{
     background-color:dimgray;
    
@@ -50,7 +51,7 @@ body{
 .btn{
     background-color:darkgrey;
 }
-/*this customizes thead Navigation Bar*/
+/*this customizes the Navigation Bar*/
 .navBar{
     background-color:darkolivegreen;
     outline-color:darkslategrey;
@@ -65,4 +66,8 @@ body{
 .detailsCard{
    background-color:gray;
    font-size: large;
+ 
 }
+
+
+/*end of style sheet*/
